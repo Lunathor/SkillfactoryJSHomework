@@ -127,14 +127,27 @@
 // }
 // defineSimple(+prompt('Введите число'));
 // Задание 3
-function getSumFunc(firstOperand){
-    return function(secondOperand){
-        return firstOperand + secondOperand;
-    }
+// function getSumFunc(firstOperand){
+//     return function(secondOperand){
+//         return firstOperand + secondOperand;
+//     }
+// }
+// const sum = getSumFunc(+prompt('Введите первый операнд'));
+// const result = sum(+prompt("Введите второй операнд")); // Взял функцию prompt чтобы были не заранее подготовленные числа а те которые введет пользователь
+// console.log(`Сумма полученных чисел ${result}`);
+// alert(`Сумма полученных чисел ${result}`); // Выведем в консоль и на экран если проверка будет в браузере
+// Задание 4
+let start = +prompt("Введите стартовое число")
+let stop = +prompt("Введите конечное число")
+function logNum(start, stop){
+    let current = start;
+    let IntervalId = setInterval(function(){
+        console.log(current);
+        if (current === stop){
+            clearInterval(IntervalId);
+        }
+        current++
+    }, 1000);
 }
-const sum = getSumFunc(+prompt('Введите первый операнд'));
-const result = sum(+prompt("Введите второй операнд")); // Взял функцию prompt чтобы были не заранее подготовленные числа а те которые введет пользователь
-console.log(`Сумма полученных чисел ${result}`);
-alert(`Сумма полученных чисел ${result}`); // Выведем в консоль и на экран если проверка будет в браузере
-
+logNum(start, stop);
 
