@@ -137,17 +137,32 @@
 // console.log(`Сумма полученных чисел ${result}`);
 // alert(`Сумма полученных чисел ${result}`); // Выведем в консоль и на экран если проверка будет в браузере
 // Задание 4
-let start = +prompt("Введите стартовое число")
-let stop = +prompt("Введите конечное число")
-function logNum(start, stop){
-    let current = start;
-    let IntervalId = setInterval(function(){
-        console.log(current);
-        if (current === stop){
-            clearInterval(IntervalId);
-        }
-        current++
-    }, 1000);
-}
-logNum(start, stop);
+// let start = +prompt("Введите стартовое число")
+// let stop = +prompt("Введите конечное число")
+// function logNum(start, stop){
+//     let current = start;
+//     let IntervalId = setInterval(function(){
+//         console.log(current);
+//         if (current === stop){
+//             clearInterval(IntervalId);
+//         }
+//         current++
+//     }, 1000);
+// }
+// logNum(start, stop);
+// const emptyObject = {
+//     a: 2,
+//     b: "prop",
+//     c: undefined,
+//     f: function () {
+//         for(let key in emptyObject) {
+//             console.log(emptyObject[key]);
+//         }
+//     },
+//     e: 1,
+// };
+// console.log(emptyObject);
+// delete emptyObject.a;
+// console.log(emptyObject);
+
 
