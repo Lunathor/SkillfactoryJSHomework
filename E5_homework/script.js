@@ -20,15 +20,18 @@ function updateImage() {
     }, 50);
 }
 
-prevButton.addEventListener('click', () => {
+prevButtonFunc = function() {
     currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
     updateImage();
-});
+}
 
-nextButton.addEventListener('click', () => {
+nextButtonFunc = function() {
     currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
     updateImage();
-});
+}
+
+prevButton.addEventListener('click', prevButtonFunc);
+nextButton.addEventListener('click', nextButtonFunc);
 
 // Инициализация первого изображения
 updateImage();
