@@ -164,5 +164,55 @@
 // console.log(emptyObject);
 // delete emptyObject.a;
 // console.log(emptyObject);
+const xmlData = `
+<list>
+  <student>
+    <name lang="en">
+      <first>Ivan</first>
+      <second>Ivanov</second>
+    </name>
+    <age>35</age>
+    <prof>teacher</prof>
+  </student>
+  <student>
+    <name lang="ru">
+      <first>Петр</first>
+      <second>Петров</second>
+    </name>
+    <age>58</age>
+    <prof>driver</prof>
+  </student>
+</list>
+`;
 
+// Функция для преобразования XML в объект
+function parseXML(xml) {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xml, "text/xml");
+
+    const students = xmlDoc.getElementsByTagName("student");
+    const studentsList = [];
+
+    Array.from(students).forEach(student => {
+        const nameElem = student.getElementsByTagName("name")[0];
+        const firstName = nameElem.getElementsByTagName("first")[0].textContent;
+        const secondName = nameElem.getElementsByTagName("second")[0].textContent;
+        const lang = nameElem.getAttribute("lang");
+
+        const studentObj = {
+            name: `${firstName} ${secondName}`,
+            age: parseInt(student.getElementsByTagName("age")[0].textContent),
+            prof: student.getElementsByTagName("prof")[0].textContent,
+            lang: lang
+        };
+
+        studentsList.push(studentObj);
+    });
+
+    return { list: studentsList };
+}
+
+// Преобразуем XML и выводим результат
+const result = parseXML(xmlData);
+console.log(result);
 
