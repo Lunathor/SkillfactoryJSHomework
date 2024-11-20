@@ -215,25 +215,44 @@
 // // Преобразуем XML и выводим результат
 // const result = parseXML(xmlData);
 // console.log(result);
-const jsonString = `{
- "list": [
-  {
-   "name": "Petr",
-   "age": "20",
-   "prof": "mechanic"
-  },
-  {
-   "name": "Vova",
-   "age": "60",
-   "prof": "pilot"
-  }
- ]
-}`
+// const jsonString = `{
+//  "list": [
+//   {
+//    "name": "Petr",
+//    "age": "20",
+//    "prof": "mechanic"
+//   },
+//   {
+//    "name": "Vova",
+//    "age": "60",
+//    "prof": "pilot"
+//   }
+//  ]
+// }`
+//
+// const jsonObject = JSON.parse(jsonString);
+//
+// jsonObject.list.forEach(item => {
+//     item.age = Number(item.age);
+// })
+//
+// console.log(jsonObject);
 
-const jsonObject = JSON.parse(jsonString);
-
-jsonObject.list.forEach(item => {
-    item.age = Number(item.age);
-})
-
-console.log(jsonObject);
+// const numPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let num = Math.floor(Math.random() * 100 + 1);
+//         if (num % 2) {
+//             reject(num);
+//         } else {
+//             resolve(num);
+//         }
+//     },
+//     3000
+//     )
+// });
+// numPromise.then(result => {
+//     console.log("Завершенно успешно. Сгенерированное число - " + result);
+// }
+// ).catch(result => {
+//     console.log("Завершено с ошибкой. Сгенерированное число - " + result);
+// })
